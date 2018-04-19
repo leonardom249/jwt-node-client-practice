@@ -41,7 +41,8 @@ export const almostTimeout = ()=>({
 export const BACK_TO_LOGIN = 'BACK_TO_LOGIN'
 export const backToLogin = ()=>({
     type: BACK_TO_LOGIN
-})
+});
+
 
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token

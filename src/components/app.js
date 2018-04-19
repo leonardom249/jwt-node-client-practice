@@ -11,19 +11,39 @@ import {refreshAuthToken, clearAuth, almostTimeout} from '../actions/auth';
 
 export class App extends React.Component {
     componentDidMount(){
-        console.log(this.props.state)
+        let timeOut;
+        let alertTimeOut;
+        document.addEventListener('click', ()=>{
+            clearTimeout(alertTimeOut);
+           alertTimeOut=
+           setTimeout(()=>{
+                console.log('times almost up');
+                this.props.dispatch(almostTimeout())
+                console.log(this.props.dialogAlert)
+            }, 240,000)
 
-        setTimeout(()=>{
-            console.log('times almost up');
-            this.props.dispatch(almostTimeout())
-            console.log(this.props.dialogAlert)
-        }, 5000)
+            clearTimeout(timeOut);
+           timeOut=
+             setTimeout(()=>{
+                console.log('time')
+                this.props.dispatch(clearAuth())
+            }, 300,000)
+        })
+        
+        
 
-        setTimeout(()=>{
-            console.log('time')
-            this.props.dispatch(clearAuth())
-        }, 300000)
+        // setTimeout(()=>{
+        //     console.log('times almost up');
+        //     this.props.dispatch(almostTimeout())
+        //     console.log(this.props.dialogAlert)
+        // }, 5000)
+
+        
     }
+
+
+
+
 
 
     componentDidUpdate(prevProps) {

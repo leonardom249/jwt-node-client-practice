@@ -13,7 +13,8 @@ const initialState = {
     currentUser: null,
     loading: false,
     error: null,
-    dialogAlert: false
+    dialogAlert: false,
+    time: 5000
 };
 
 export default function reducer(state = initialState, action) {
