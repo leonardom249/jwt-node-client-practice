@@ -20,24 +20,15 @@ export class App extends React.Component {
                 console.log('times almost up');
                 this.props.dispatch(almostTimeout())
                 console.log(this.props.dialogAlert)
-            }, 240,000)
+            }, 240000)
 
             clearTimeout(timeOut);
            timeOut=
              setTimeout(()=>{
                 console.log('time')
                 this.props.dispatch(clearAuth())
-            }, 300,000)
+            }, 300000)
         })
-        
-        
-
-        // setTimeout(()=>{
-        //     console.log('times almost up');
-        //     this.props.dispatch(almostTimeout())
-        //     console.log(this.props.dialogAlert)
-        // }, 5000)
-
         
     }
 
