@@ -6,11 +6,12 @@ export function TimerAlert(props){
     return(
         <div>
             <h2>Your session will finish in 1 minute</h2>
-            <p>Please re-login to continue</p>
+            <p>Please click the button below to stay on the page</p>
+            <p>Otherwise you will be redirected to the login page</p>
             <button 
                 onClick={()=> props.dispatch(backToLogin())}
             >
-                Sorry, I didn't learn how to keep you here
+                Stay On Page
             </button>
         </div>
     )

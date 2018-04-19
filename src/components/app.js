@@ -7,7 +7,7 @@ import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
-import {refreshAuthToken, clearAuth, almostTimeout} from '../actions/auth';
+import {refreshAuthToken, clearAuth, almostTimeout, backToLogin} from '../actions/auth';
 
 export class App extends React.Component {
     componentDidMount(){
@@ -27,6 +27,7 @@ export class App extends React.Component {
              setTimeout(()=>{
                 console.log('time')
                 this.props.dispatch(clearAuth())
+                this.props.dispatch(backToLogin())
             }, 300000)
         })
         
