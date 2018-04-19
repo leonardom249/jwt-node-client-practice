@@ -36,10 +36,11 @@ export const authError = error => ({
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
-    const decodedToken = jwtDecode(authToken);
+    const decodedToken = jwtDecode(authToken);//returns object with a user object containing first, last, and user name
+    console.log(decodedToken.user);
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user));
-    saveAuthToken(authToken);
+    // saveAuthToken(authToken);//put this in to keep the token on browser refresh/when not here, upon refresh, it will make you login again
 };
 
 export const login = (username, password) => dispatch => {
