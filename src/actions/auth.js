@@ -33,6 +33,16 @@ export const authError = error => ({
     error
 });
 
+export const ALMOST_TIMEOUT = 'ALMOST_TIMEOUT'
+export const almostTimeout = ()=>({
+    type: ALMOST_TIMEOUT
+});
+
+export const BACK_TO_LOGIN = 'BACK_TO_LOGIN'
+export const backToLogin = ()=>({
+    type: BACK_TO_LOGIN
+})
+
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
